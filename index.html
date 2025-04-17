@@ -1,60 +1,51 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor de Monedas</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <div class="converter-box">
-            <h1><i class="fas fa-exchange-alt"></i> Conversor de Monedas</h1>
-            
-            <div class="input-group">
-                <div class="amount-input">
-                    <label for="amount">Cantidad:</label>
-                    <input type="number" id="amount" placeholder="0.00" min="0" step="0.01">
-                </div>
-                
-                <div class="currency-select">
-                    <label for="from-currency">De:</label>
-                    <select id="from-currency">
-                        <option value="NIO">NIO - Córdoba nicaragüense</option>
-                        <option value="USD">USD - Dólar Estadounidense</option>
-                        <option value="EUR">EUR - Euro</option>
-                        <option value="GBP">GBP - Libra Esterlina</option>
-                        <option value="JPY">JPY - Yen Japonés</option>
-                        <option value="MXN">MXN - Peso Mexicano</option>
-                    </select>
-                </div>
-
-                <button id="swap-btn" class="swap-btn">
-                    <i class="fas fa-exchange-alt"></i>
-                </button>
-
-                <div class="currency-select">
-                    <label for="to-currency">A:</label>
-                    <select id="to-currency">
-                        <option value="NIO">NIO - Córdoba nicaragüense</option>
-                        <option value="EUR">EUR - Euro</option>
-                        <option value="USD">USD - Dólar Estadounidense</option>
-                        <option value="GBP">GBP - Libra Esterlina</option>
-                        <option value="JPY">JPY - Yen Japonés</option>
-                        <option value="MXN">MXN - Peso Mexicano</option>
-                    </select>
-                </div>
+        <h1 class="title">Conversor de Monedas</h1>
+        <h2 class="subtitle">Hecho por Yeriel y Julio 💸</h2>
+        <div class="currency-images">
+            <img src="https://cdn-icons-png.flaticon.com/512/330/330439.png" alt="USD" class="coin-img">
+            <img src="https://cdn-icons-png.flaticon.com/512/330/330523.png" alt="EUR" class="coin-img">
+            <img src="https://cdn-icons-png.flaticon.com/512/197/197484.png" alt="JPY" class="coin-img">
+        </div>
+        <div class="converter">
+            <input type="number" id="amount" placeholder="Cantidad" min="0" step="any">
+            <div class="selectors">
+                <select id="from-currency">
+                    <option value="USD">USD - Dólar estadounidense</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="MXN">MXN - Peso mexicano</option>
+                    <option value="GBP">GBP - Libra esterlina</option>
+                    <option value="JPY">JPY - Yen japonés</option>
+                    <option value="CAD">CAD - Dólar canadiense</option>
+                    <option value="BRL">BRL - Real brasileño</option>
+                    <option value="ARS">ARS - Peso argentino</option>
+                </select>
+                <button id="swap-btn">⇄</button>
+                <select id="to-currency">
+                    <option value="USD">USD - Dólar estadounidense</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="MXN">MXN - Peso mexicano</option>
+                    <option value="GBP">GBP - Libra esterlina</option>
+                    <option value="JPY">JPY - Yen japonés</option>
+                    <option value="CAD">CAD - Dólar canadiense</option>
+                    <option value="BRL">BRL - Real brasileño</option>
+                    <option value="ARS">ARS - Peso argentino</option>
+                </select>
             </div>
-
-            <div class="result">
-                <p id="result-text">Resultado: <span id="converted-amount">0.00</span></p>
-                <p id="rate-text">Tasa de cambio: <span id="exchange-rate">1.00</span></p>
-            </div>
-
-            <button id="convert-btn" class="convert-btn">Convertir</button>
+            <button id="convert-btn">Convertir</button>
+            <div id="exchange-rate" class="exchange-rate"></div>
+            <div class="result">Resultado: <span id="converted-amount">--</span></div>
+            <div id="message-box" class="message-box"></div>
         </div>
     </div>
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
